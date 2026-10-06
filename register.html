@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vessel Registration - OceanMind</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- OceanMind Master CSS -->
+  <link rel="stylesheet" href="css/oceanmind.css">
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <canvas id="auth-canvas"></canvas>
+
+    <div class="glass-card auth-card auth-card-wide glow-cyan">
+      <div class="auth-header">
+        <a href="index.html" class="auth-logo">
+          <div class="auth-logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#041221" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path></svg>
+          </div>
+          <span class="auth-logo-text">OceanMind</span>
+        </a>
+        <h2 class="auth-title">Vessel & Fisherman Registration</h2>
+        <p class="auth-subtitle">Register your fishing boat for GPS tracking and border alert protection</p>
+      </div>
+
+      <!-- Multi-step Progress Bar -->
+      <div class="form-steps-nav">
+        <div class="step-indicator active" data-step="1">1</div>
+        <div class="step-indicator" data-step="2">2</div>
+        <div class="step-indicator" data-step="3">3</div>
+      </div>
+
+      <form id="register-form">
+        <!-- ==========================================
+             STEP 1: PERSONAL DETAILS (users table)
+             ========================================== -->
+        <div class="form-step" data-step="1">
+          <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 20px;">Step 1: Fisherman Identification Details</h3>
+          
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="first_name">First Name *</label>
+              <input type="text" class="form-control" id="first_name" placeholder="Raman" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last_name">Last Name *</label>
+              <input type="text" class="form-control" id="last_name" placeholder="Kumar" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="date_of_birth">Date of Birth *</label>
+              <input type="date" class="form-control" id="date_of_birth" required value="1988-05-14">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="nationality">Nationality *</label>
+              <input type="text" class="form-control" id="nationality" placeholder="Indian" required value="Indian">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="state">State *</label>
+              <select class="form-control" id="state" required>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Odisha">Odisha</option>
+                <option value="West Bengal">West Bengal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="district">District *</label>
+              <input type="text" class="form-control" id="district" placeholder="Ramanathapuram" required value="Ramanathapuram">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number *</label>
+              <input type="tel" class="form-control" id="phone" placeholder="+91 98765 43210" required value="+91 98765 43210">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="aadhaar_number">Aadhaar Number (12 Digits) *</label>
+              <input type="text" class="form-control" id="aadhaar_number" placeholder="5482 9102 3341" required value="5482 9102 3341">
+            </div>
+          </div>
+        </div>
+
+        <!-- ==========================================
+             STEP 2: BOAT SPECIFICATIONS (boats table)
+             ========================================== -->
+        <div class="form-step" data-step="2" style="display: none;">
+          <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 20px;">Step 2: Vessel & Boat Specifications</h3>
+          
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="boat_id">Boat Unique Identifier (ID) *</label>
+              <input type="text" class="form-control" id="boat_id" placeholder="BOAT-IND-7842" required value="BOAT-IND-7842">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="boat_name">Boat Name *</label>
+              <input type="text" class="form-control" id="boat_name" placeholder="Ocean Sentinel IX" required value="Ocean Sentinel IX">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="registration_number">Official Registration Number *</label>
+              <input type="text" class="form-control" id="registration_number" placeholder="IND-TN-10-MM-884" required value="IND-TN-10-MM-884">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="boat_type">Vessel Vessel Type *</label>
+              <select class="form-control" id="boat_type" required>
+                <option value="Deep Sea Trawler">Deep Sea Trawler</option>
+                <option value="Gillnetter">Gillnetter</option>
+                <option value="Longliner">Longliner</option>
+                <option value="Motorized Mechanized Craft">Motorized Mechanized Craft</option>
+                <option value="Patrol Speedboat">Patrol Speedboat</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="capacity">Boat Storage / Crew Capacity (Tons / Crew Count) *</label>
+            <input type="text" class="form-control" id="capacity" placeholder="18 Tons / 8 Crew Members" required value="18 Tons / 8 Crew">
+          </div>
+        </div>
+
+        <!-- ==========================================
+             STEP 3: ACCOUNT & ROLE (users credentials)
+             ========================================== -->
+        <div class="form-step" data-step="3" style="display: none;">
+          <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 20px;">Step 3: Portal Credentials & Role</h3>
+          
+          <div class="form-group">
+            <label class="form-label" for="role">User Role *</label>
+            <select class="form-control" id="role" required>
+              <option value="Fisherman">Fisherman / Vessel Captain</option>
+              <option value="Boat Owner">Boat Owner / Fleet Manager</option>
+              <option value="Maritime Authority">Maritime Authority Officer</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Account Email Address *</label>
+            <input type="email" class="form-control" id="email" placeholder="raman.kumar@oceanmind.org" required value="raman.kumar@oceanmind.org">
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Password *</label>
+              <div class="password-input-wrapper">
+                <input type="password" class="form-control" id="reg-password" placeholder="••••••••••••" required value="OceanMind2026!">
+                <span class="password-toggle">👁️</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-confirm-password">Confirm Password *</label>
+              <div class="password-input-wrapper">
+                <input type="password" class="form-control" id="reg-confirm-password" placeholder="••••••••••••" required value="OceanMind2026!">
+                <span class="password-toggle">👁️</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px; font-size: 0.85rem; color: var(--text-muted);">
+            <label style="display: flex; align-items: center; gap: 8px;">
+              <input type="checkbox" required checked style="accent-color: var(--primary-blue);">
+              I agree to transmit GPS satellite location telemetry for maritime border safety under Maritime Security Acts.
+            </label>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div style="display: flex; items-center; justify-content: space-between; margin-top: 30px;">
+          <button type="button" class="btn btn-secondary" id="prev-step-btn" style="display: none;">Previous</button>
+          <div></div>
+          <button type="button" class="btn btn-primary" id="next-step-btn">
+            <span>Continue to Next Step</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <button type="submit" class="btn btn-primary glow-blue" id="submit-reg-btn" style="display: none;">
+            <span>Complete Registration</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="auth-footer-link">
+        Already registered? <a href="login.html">Back to Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/ocean-animation.js"></script>
+  <script src="js/apiClient.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

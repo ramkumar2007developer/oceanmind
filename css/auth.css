@@ -1,0 +1,188 @@
+/* ==========================================================================
+   OCEANMIND - AUTHENTICATION PAGES STYLES (auth.css)
+   Login & Register Page Design
+   ========================================================================== */
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+#auth-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 520px;
+  padding: 44px;
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.auth-card-wide {
+  max-width: 840px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.auth-logo-icon {
+  width: 48px;
+  height: 48px;
+  background: radial-gradient(circle, var(--accent-cyan), var(--primary-blue));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+}
+
+.auth-logo-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Floating Boat Graphic on Login */
+.floating-vessel-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.floating-vessel-svg {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 15px rgba(0, 180, 255, 0.5));
+  animation: floatBoat 4s ease-in-out infinite;
+}
+
+/* Multi-Step Register Layout */
+.form-steps-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form-steps-nav::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--card-border);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.step-indicator {
+  position: relative;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.step-indicator.active {
+  border-color: var(--primary-blue);
+  background: var(--primary-blue);
+  color: #041221;
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
+}
+
+.step-indicator.completed {
+  border-color: var(--color-success);
+  background: var(--color-success);
+  color: #041221;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.auth-footer-link {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.auth-footer-link a {
+  font-weight: 600;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: var(--primary-blue);
+}
+
+@media (max-width: 640px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .auth-card {
+    padding: 28px 20px;
+  }
+}
